@@ -922,8 +922,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1196,7 +1194,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.big-text[data-v-63080d70] { font-size: 28px;\n}\n.product-box[data-v-63080d70] { border: 1px solid #cccccc; padding: 10px 15px; height: 20vh\n}\n", ""]);
+exports.push([module.i, ".big-text[data-v-63080d70] { font-size: 28px;\n}\n.product-box[data-v-63080d70] { border: 1px solid #cccccc; padding: 10px 15px; height: 20vh\n}\n", ""]);
 
 // exports
 
@@ -1215,7 +1213,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.modal-mask[data-v-63afc935] {\n    position: fixed;\n    z-index: 9998;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-color: rgba(0, 0, 0, .5);\n    display: table;\n    transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-63afc935] {\n    display: table-cell;\n    vertical-align: middle;\n}\n.modal-container[data-v-63afc935] {\n    width: 300px;\n    margin: 0px auto;\n    padding: 20px 30px;\n    background-color: #fff;\n    border-radius: 2px;\n    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);\n    transition: all .3s ease;\n    font-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3[data-v-63afc935] {\n    margin-top: 0;\n    color: #42b983;\n}\n.modal-body[data-v-63afc935] {\n    margin: 20px 0;\n}\n.modal-default-button[data-v-63afc935] {\n    float: right;\n}\n.modal-enter[data-v-63afc935] {\n    opacity: 0;\n}\n.modal-leave-active[data-v-63afc935] {\n    opacity: 0;\n}\n.modal-enter .modal-container[data-v-63afc935],\n.modal-leave-active .modal-container[data-v-63afc935] {\n    transform: scale(1.1);\n}\n", ""]);
+exports.push([module.i, ".modal-mask[data-v-63afc935] {\n  position: fixed;\n  z-index: 9998;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, .5);\n  display: table;\n  transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-63afc935] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.modal-container[data-v-63afc935] {\n  width: 300px;\n  margin: 0px auto;\n  padding: 20px 30px;\n  background-color: #fff;\n  border-radius: 2px;\n  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);\n  transition: all .3s ease;\n  font-family: Helvetica, Arial, sans-serif;\n}\n.modal-header h3[data-v-63afc935] {\n  margin-top: 0;\n  color: #42b983;\n}\n.modal-body[data-v-63afc935] {\n  margin: 20px 0;\n}\n.modal-default-button[data-v-63afc935] {\n  float: right;\n}\n.modal-enter[data-v-63afc935] {\n  opacity: 0;\n}\n.modal-leave-active[data-v-63afc935] {\n  opacity: 0;\n}\n.modal-enter .modal-container[data-v-63afc935],\n.modal-leave-active .modal-container[data-v-63afc935] {\n  transform: scale(1.1);\n}\n", ""]);
 
 // exports
 
@@ -1234,7 +1232,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.hero-section[data-v-ca2e4be8] { height: 20vh; background: #ababab; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-ca2e4be8] { font-size: 60px; color: #ffffff;\n}\n", ""]);
+exports.push([module.i, ".hero-section[data-v-ca2e4be8] { height: 20vh; background: #ababab; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-ca2e4be8] { font-size: 60px; color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -1253,7 +1251,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-7b3dab19] { font-size: 18px;\n}\n.order-box[data-v-7b3dab19] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.title[data-v-7b3dab19] { font-size: 36px;\n}\n", ""]);
+exports.push([module.i, ".small-text[data-v-7b3dab19] { font-size: 18px;\n}\n.order-box[data-v-7b3dab19] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.title[data-v-7b3dab19] { font-size: 36px;\n}\n", ""]);
 
 // exports
 
@@ -1272,7 +1270,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.medium-text[data-v-296b75f0] { font-size: 36px;\n}\n.small-link[data-v-296b75f0] { font-size: 24px; text-decoration: underline; color: #777;\n}\n.product-box[data-v-296b75f0] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-296b75f0] { height: 80vh; align-items: center; margin-top: -20px; margin-bottom: 20px;\n}\n.title[data-v-296b75f0] { font-size: 60px;\n}\n", ""]);
+exports.push([module.i, ".medium-text[data-v-296b75f0] { font-size: 36px;\n}\n.small-link[data-v-296b75f0] { font-size: 24px; text-decoration: underline; color: #777;\n}\n.product-box[data-v-296b75f0] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-296b75f0] { height: 80vh; align-items: center; margin-top: -20px; margin-bottom: 20px;\n}\n.title[data-v-296b75f0] { font-size: 60px;\n}\n", ""]);
 
 // exports
 
@@ -1291,7 +1289,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-6c0a33b2] {\n    font-size: 14px;\n}\n.product-box[data-v-6c0a33b2] {\n    border: 1px solid #cccccc;\n    padding: 10px 15px;\n}\n.hero-section[data-v-6c0a33b2] {\n    height: 30vh;\n    background: #ababab;\n    align-items: center;\n    margin-bottom: 20px;\n    margin-top: -20px;\n}\n.title[data-v-6c0a33b2] {\n    font-size: 60px;\n    color: #ffffff;\n}\n", ""]);
+exports.push([module.i, ".small-text[data-v-6c0a33b2] {\n  font-size: 14px;\n}\n.product-box[data-v-6c0a33b2] {\n  border: 1px solid #cccccc;\n  padding: 10px 15px;\n}\n.hero-section[data-v-6c0a33b2] {\n  height: 30vh;\n  background: #ababab;\n  align-items: center;\n  margin-bottom: 20px;\n  margin-top: -20px;\n}\n.title[data-v-6c0a33b2] {\n  font-size: 60px;\n  color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -1310,7 +1308,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-25288544] { font-size: 18px;\n}\n.title[data-v-25288544] { font-size: 36px;\n}\n", ""]);
+exports.push([module.i, ".small-text[data-v-25288544] { font-size: 18px;\n}\n.title[data-v-25288544] { font-size: 36px;\n}\n", ""]);
 
 // exports
 
@@ -1329,7 +1327,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.small-text[data-v-751a1018] { font-size: 14px;\n}\n.product-box[data-v-751a1018] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-751a1018] { background: #ababab; height: 20vh; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-751a1018] { font-size: 60px; color: #ffffff;\n}\n", ""]);
+exports.push([module.i, ".small-text[data-v-751a1018] { font-size: 14px;\n}\n.product-box[data-v-751a1018] { border: 1px solid #cccccc; padding: 10px 15px;\n}\n.hero-section[data-v-751a1018] { background: #ababab; height: 20vh; align-items: center; margin-bottom: 20px; margin-top: -20px;\n}\n.title[data-v-751a1018] { font-size: 60px; color: #ffffff;\n}\n", ""]);
 
 // exports
 
@@ -3747,14 +3745,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto"
-      },
-      [_c("h2", { staticClass: "title" }, [_vm._v("Welcome to the bigStore")])]
-    )
+    return _c("div", { staticClass: "bg-black container" }, [
+      _c("h2", { staticClass: "title" }, [_vm._v("Welcome to the bigStore")])
+    ])
   }
 ]
 render._withStripped = true
@@ -3778,114 +3771,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Login")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("form", [
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-sm-4 col-form-label text-md-right",
-                    attrs: { for: "email" }
-                  },
-                  [_vm._v("E-Mail Address")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.email,
-                        expression: "email"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      id: "email",
-                      type: "email",
-                      required: "",
-                      autofocus: ""
-                    },
-                    domProps: { value: _vm.email },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.email = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ]),
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex items-center justify-center" }, [
+      _c("div", { staticClass: "w-full max-w-xs" }, [
+        _c(
+          "form",
+          { staticClass: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" },
+          [
+            _c("div", { staticClass: "mb-4" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                  attrs: { for: "username" }
+                },
+                [_vm._v("\n                Username\n            ")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group row" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass: "col-md-4 col-form-label text-md-right",
-                    attrs: { for: "password" }
-                  },
-                  [_vm._v("Password")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-6" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.password,
-                        expression: "password"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { id: "password", type: "password", required: "" },
-                    domProps: { value: _vm.password },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.password = $event.target.value
-                      }
-                    }
-                  })
-                ])
-              ]),
+              _c("input", {
+                staticClass:
+                  "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                attrs: { id: "username", type: "text", placeholder: "Username" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "mb-6" }, [
+              _c(
+                "label",
+                {
+                  staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                  attrs: { for: "password" }
+                },
+                [_vm._v("\n                Password\n            ")]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "form-group row mb-0" }, [
-                _c("div", { staticClass: "col-md-8 offset-md-4" }, [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-primary",
-                      attrs: { type: "submit" },
-                      on: { click: _vm.handleSubmit }
-                    },
-                    [
-                      _vm._v(
-                        "\n                                    Login\n                                "
-                      )
-                    ]
-                  )
-                ])
+              _c("input", {
+                staticClass:
+                  "shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline",
+                attrs: {
+                  id: "password",
+                  type: "password",
+                  placeholder: "******************"
+                }
+              }),
+              _vm._v(" "),
+              _c("p", { staticClass: "text-red-500 text-xs italic" }, [
+                _vm._v("Please choose a password.")
               ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flex items-center justify-between" }, [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+                  attrs: { type: "button" }
+                },
+                [_vm._v("\n                Sign In\n            ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("\n                Forgot Password?\n            ")]
+              )
             ])
-          ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-center text-gray-500 text-xs" }, [
+          _vm._v(
+            "\n            ©2020 Acme Corp. All rights reserved.\n        "
+          )
         ])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 
 
@@ -19785,15 +19758,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************************!*\
   !*** ./resources/assets/js/components/admin/Users.vue ***!
   \********************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_vue_vue_type_template_id_24d856e1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Users.vue?vue&type=template&id=24d856e1& */ "./resources/assets/js/components/admin/Users.vue?vue&type=template&id=24d856e1&");
 /* harmony import */ var _Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Users.vue?vue&type=script&lang=js& */ "./resources/assets/js/components/admin/Users.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Users_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -19823,7 +19795,7 @@ component.options.__file = "resources/assets/js/components/admin/Users.vue"
 /*!*********************************************************************************!*\
   !*** ./resources/assets/js/components/admin/Users.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20580,10 +20552,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/sass/app.scss":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.scss ***!
-  \****************************************/
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -20592,14 +20564,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!***************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ***!
-  \***************************************************************************/
+/*!******************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/css/app.css ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/myatsu/Development/webapp/store-app/resources/assets/js/app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! /home/myatsu/Development/webapp/store-app/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
+module.exports = __webpack_require__(/*! /home/myatsu/Development/webapp/store-app/resources/css/app.css */"./resources/css/app.css");
 
 
 /***/ })

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container-fluid hero-section d-flex align-content-center justify-content-center flex-wrap ml-auto">
+        <div class="bg-black container">
             <h2 class="title">Welcome to the bigStore</h2>
         </div>
         <div class="container">
