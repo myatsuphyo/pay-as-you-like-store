@@ -41,6 +41,7 @@
 </style>
 
 <script>
+import axios from 'axios';
 export default {
     props : ['pid'],
     data(){

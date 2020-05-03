@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="bg-black container">
-            <h2 class="title">Welcome to the bigStore</h2>
+        <div class="items-center">
+            <p class="text-blue-500 text-bold text-xl">Welcome to the store!</p>
         </div>
         <div class="container">
             <div class="row">
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
         data(){
             return {
@@ -35,24 +36,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .small-text {
-        font-size: 14px;
-    }
-    .product-box {
-        border: 1px solid #cccccc;
-        padding: 10px 15px;
-    }
-    .hero-section {
-        height: 30vh;
-        background: #ababab;
-        align-items: center;
-        margin-bottom: 20px;
-        margin-top: -20px;
-    }
-    .title {
-        font-size: 60px;
-        color: #ffffff;
-    }
-</style>

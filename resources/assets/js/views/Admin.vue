@@ -28,6 +28,8 @@ import Users from '../components/admin/Users'
 import Products from '../components/admin/Products'
 import Orders from '../components/admin/Orders'
 
+import axios from 'axios';
+
 export default {
     data() {
         return {
