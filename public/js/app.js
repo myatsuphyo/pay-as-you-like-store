@@ -5830,7 +5830,10 @@ var render = function() {
     _c("div", { staticClass: "md:max-w-1/2 m-10 md:m-auto" }, [
       _c(
         "div",
-        { staticClass: "md:px-10 py-4 rounded overflow-hidden md:shadow-lg" },
+        {
+          staticClass:
+            "md:px-10 md:bg-white py-4 rounded overflow-hidden md:shadow-lg"
+        },
         [
           _c("div", { staticClass: "font-bold text-xl mb-2" }, [
             _vm._v(_vm._s(_vm.product.name))
@@ -5850,9 +5853,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "flex-wrap pt-8" }, [
         _c("div", { staticClass: "text-gray-700 text-xl" }, [
-          _vm._v(
-            "\n                My favourite lines\n                \n            "
-          )
+          _vm._v("\n                My favourite lines\n\n            ")
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "text-gray-700 text-base py-2" }, [

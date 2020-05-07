@@ -15,7 +15,7 @@
             <router-link :to="{ path: '/checkout?pid='+product.id }" class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</router-link>
         </div> -->
         <div class="md:max-w-1/2 m-10 md:m-auto">
-            <div class="md:px-10 py-4 rounded overflow-hidden md:shadow-lg">
+            <div class="md:px-10 md:bg-white py-4 rounded overflow-hidden md:shadow-lg">
                 <div class="font-bold text-xl mb-2">{{product.name}}</div>
                 <p class="text-gray-700 text-base">
                     {{product.description}}
@@ -30,7 +30,7 @@
             <div class="flex-wrap pt-8">
                 <div class="text-gray-700 text-xl">
                     My favourite lines
-                    
+
                 </div>
                 <p class="text-gray-700 text-base py-2">
                     {{product.description}}
