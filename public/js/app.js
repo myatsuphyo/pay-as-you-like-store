@@ -2943,6 +2943,12 @@ __webpack_require__.r(__webpack_exports__);
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
       return _this.product = response.data;
     });
+  },
+  created: function created() {
+    var url = "https://www.goodreads.com/book/isbn/0441172717?callback=myCallback&format=json&user_id=48008136";
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
+      return console.log(response.data);
+    });
   }
 });
 
@@ -5794,10 +5800,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex items-center p-24" }, [
+  return _c("div", { staticClass: "flex items-center px-24" }, [
     _c("div", { staticClass: "w-1/2" }, [
       _c("img", {
-        staticClass: "w-auto h-auto",
+        staticClass: "w-auto h-auto shadow-2xl hover:shadow-5xl",
         attrs: { src: _vm.product.image, alt: _vm.product.name }
       })
     ]),

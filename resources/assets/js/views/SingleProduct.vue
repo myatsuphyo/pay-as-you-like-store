@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center p-24">
+    <div class="flex items-center px-24">
         <div class="w-1/2">
-            <img class="w-auto h-auto" :src="product.image" :alt="product.name">
+            <img class="w-auto h-auto shadow-2xl hover:shadow-5xl" :src="product.image" :alt="product.name">
         </div>
         <div class="w-1/2">
             <p class="text-3xl text-bold" v-html="product.name"></p>
@@ -28,6 +28,10 @@ export default {
     beforeMount(){
         let url = `/api/products/${this.$route.params.id}`
         axios.get(url).then(response => this.product = response.data)      
+    }, 
+    created() {
+        let url = `https://www.goodreads.com/book/isbn/0441172717?callback=myCallback&format=json&user_id=48008136`
+        axios.get(url).then(response => console.log(response.data))  
     }
 }
 </script>
