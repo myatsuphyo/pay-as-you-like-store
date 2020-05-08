@@ -2,16 +2,11 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
 class ProductTag extends Pivot
 {
     protected $fillable = [
         'product_id', 'text_id',
     ];
-
-    public function products()
-    {
-        return $this->hasMany(Product::class);
-    }
 }

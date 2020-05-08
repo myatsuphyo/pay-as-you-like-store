@@ -2945,16 +2945,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2970,12 +2960,7 @@ __webpack_require__.r(__webpack_exports__);
       return _this.product = response.data;
     });
   },
-  created: function created() {
-    var url = "https://www.goodreads.com/book/isbn/0441172717?callback=myCallback&format=json&user_id=48008136";
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
-      return console.log(response.data);
-    });
-  }
+  created: function created() {}
 });
 
 /***/ }),
@@ -5826,7 +5811,7 @@ var render = function() {
         attrs: { src: _vm.product.image, alt: _vm.product.name }
       })
     ]),
-    _vm._v(" "),
+    _vm._v("\n    " + _vm._s(_vm.product) + "\n    "),
     _c("div", { staticClass: "md:max-w-1/2 m-10 md:m-auto" }, [
       _c(
         "div",

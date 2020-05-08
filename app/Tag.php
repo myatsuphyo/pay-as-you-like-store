@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ProductTag;
+use App\Product;
 
 class Tag extends Model
 {
@@ -12,6 +14,6 @@ class Tag extends Model
 
     public function products()
     {
-        return $this->belongsToMany('App\Tag')->using('App\ProductTag');
+        // return $this->belongsToMany(Product::class)->using(ProductTag::class);
     }
 }

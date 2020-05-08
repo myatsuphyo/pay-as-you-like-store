@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Tag;
+
 use App\ProductTag;
 
 class Product extends Model
@@ -22,6 +22,6 @@ class Product extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Product')->using('App\ProductTag');
+        return $this->belongsToMany(Tag::class, 'product_tag');
     }
 }
