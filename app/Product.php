@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use App\ProductTag;
+use App\Line;
 
 class Product extends Model
 {
@@ -23,5 +23,10 @@ class Product extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class, 'product_tag');
+    }
+
+    public function lines() 
+    {
+        return $this->hasMany(Line::class);
     }
 }

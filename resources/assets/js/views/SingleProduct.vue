@@ -10,19 +10,19 @@
                     {{product.description}}
                 </p>
                 <div class="py-4">
-                    <span v-for="tag in product.tags" v-bind:key="tag.tag_id" class="inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-2 py-1 mx-1  text-sm font-semibold text-gray-700 hover:text-gray-100">#{{tag.text}}</span>
-                    <span class="inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100 md:float-right">#knowledge</span>
+                    <span v-for="tag in product.tags" v-bind:key="tag.tag_id" class="inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-2 py-1 mr-1  text-sm font-semibold text-gray-700 hover:text-gray-100">#{{tag.text}}</span>
+                    <!-- <span class="inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100 md:float-right">#knowledge</span> -->
+                    <button class="bg-transparent float-right hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                        Add to cart
+                    </button>
                 </div>
             </div>
             <div class="flex-wrap pt-8">
-                <div class="text-gray-700 text-xl">
+                <div v-if="product.lines !== []" class="text-gray-700 text-xl">
                     My favourite lines
                 </div>
-                <p class="text-gray-700 text-base py-2">
-                    {{product.description}}
-                </p>
-                <p class="text-gray-700 text-base py-2">
-                    {{product.description}}
+                <p v-for="line in product.lines" v-bind:key="line.id" class="text-gray-700 text-base py-2">
+                    {{line.text}} <span class="text-sm italic"> [ page - {{line.page_no}} ]</span>
                 </p>
             </div>
         </div>

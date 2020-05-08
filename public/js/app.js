@@ -5838,19 +5838,19 @@ var render = function() {
                   {
                     key: tag.tag_id,
                     staticClass:
-                      "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-2 py-1 mx-1  text-sm font-semibold text-gray-700 hover:text-gray-100"
+                      "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-2 py-1 mr-1  text-sm font-semibold text-gray-700 hover:text-gray-100"
                   },
                   [_vm._v("#" + _vm._s(tag.text))]
                 )
               }),
               _vm._v(" "),
               _c(
-                "span",
+                "button",
                 {
                   staticClass:
-                    "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100 md:float-right"
+                    "bg-transparent float-right hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded"
                 },
-                [_vm._v("#knowledge")]
+                [_vm._v("\n                    Add to cart\n                ")]
               )
             ],
             2
@@ -5858,27 +5858,31 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "flex-wrap pt-8" }, [
-        _c("div", { staticClass: "text-gray-700 text-xl" }, [
-          _vm._v("\n                My favourite lines\n            ")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-gray-700 text-base py-2" }, [
-          _vm._v(
-            "\n                " +
-              _vm._s(_vm.product.description) +
-              "\n            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "text-gray-700 text-base py-2" }, [
-          _vm._v(
-            "\n                " +
-              _vm._s(_vm.product.description) +
-              "\n            "
-          )
-        ])
-      ])
+      _c(
+        "div",
+        { staticClass: "flex-wrap pt-8" },
+        [
+          _vm.product.lines !== []
+            ? _c("div", { staticClass: "text-gray-700 text-xl" }, [
+                _vm._v("\n                My favourite lines\n            ")
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.product.lines, function(line) {
+            return _c(
+              "p",
+              { key: line.id, staticClass: "text-gray-700 text-base py-2" },
+              [
+                _vm._v("\n                " + _vm._s(line.text) + " "),
+                _c("span", { staticClass: "text-sm italic" }, [
+                  _vm._v(" [ page - " + _vm._s(line.page_no) + " ]")
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      )
     ])
   ])
 }
