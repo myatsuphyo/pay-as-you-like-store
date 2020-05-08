@@ -2941,10 +2941,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5811,7 +5807,7 @@ var render = function() {
         attrs: { src: _vm.product.image, alt: _vm.product.name }
       })
     ]),
-    _vm._v("\n    " + _vm._s(_vm.product) + "\n    "),
+    _vm._v(" "),
     _c("div", { staticClass: "md:max-w-1/2 m-10 md:m-auto" }, [
       _c(
         "div",
@@ -5832,13 +5828,39 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c(
+            "div",
+            { staticClass: "py-4" },
+            [
+              _vm._l(_vm.product.tags, function(tag) {
+                return _c(
+                  "span",
+                  {
+                    key: tag.tag_id,
+                    staticClass:
+                      "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-2 py-1 mx-1  text-sm font-semibold text-gray-700 hover:text-gray-100"
+                  },
+                  [_vm._v("#" + _vm._s(tag.text))]
+                )
+              }),
+              _vm._v(" "),
+              _c(
+                "span",
+                {
+                  staticClass:
+                    "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100 md:float-right"
+                },
+                [_vm._v("#knowledge")]
+              )
+            ],
+            2
+          )
         ]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "flex-wrap pt-8" }, [
         _c("div", { staticClass: "text-gray-700 text-xl" }, [
-          _vm._v("\n                My favourite lines\n\n            ")
+          _vm._v("\n                My favourite lines\n            ")
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "text-gray-700 text-base py-2" }, [
@@ -5860,50 +5882,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "py-4" }, [
-      _c(
-        "span",
-        {
-          staticClass:
-            "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100"
-        },
-        [_vm._v("#tech")]
-      ),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          staticClass:
-            "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100"
-        },
-        [_vm._v("#future")]
-      ),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          staticClass:
-            "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100"
-        },
-        [_vm._v("#knowledge")]
-      ),
-      _vm._v(" "),
-      _c(
-        "span",
-        {
-          staticClass:
-            "inline-block bg-blue-200 hover:bg-blue-500 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 hover:text-gray-100 md:float-right"
-        },
-        [_vm._v("#knowledge")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
