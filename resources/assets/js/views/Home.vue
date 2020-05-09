@@ -1,23 +1,16 @@
 <template>
-    <div>
-        <div class="items-center">
-            <p class="text-blue-500 text-bold text-xl">Welcome to the store!</p>
+    <div class="px-10">
+        <div class="text-right">
+            <p class="text-5xl text-blue-500 text-right font-bold m-2">Pay as you like</p> 
+            <p class="text-xl text-right text-blue-400 m-2">and take as many as you need.</p>
+            <p class="text-xl text-right text-gray-700 m-2">Let's recycle and reuse!</p>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4 product-box" v-for="(product,index) in products" v-bind:key="index">
-                            <router-link :to="{ path: '/products/'+product.id}">
-                                <img :src="product.image" :alt="product.name">
-                                <h5><span v-html="product.name"></span>
-                                    <span class="small-text text-muted float-right">$ {{product.price}}</span>
-                                </h5>
-                                <button class="col-md-4 btn btn-sm btn-primary float-right">Buy Now</button>
-                            </router-link>
-                        </div>
-                    </div>
-                </div>
+        <div class="flex flex-wrap-reverse">
+            <div v-for="product in products" v-bind:key="product.id" class="w-1/6 p-2">
+                <router-link :to="{ path: '/products/'+product.id}">
+                    <img class="w-auto h-auto m-auto md:m-2 shadow-2xl hover:shadow-5xl" :src="product.image" :alt="product.name">
+                    <p class="text-sm text-gray-900 text-center">{{product.name}}</p>
+                </router-link>
             </div>
         </div>
     </div>

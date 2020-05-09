@@ -2676,13 +2676,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5366,59 +5359,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "px-10" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c(
-            "div",
-            { staticClass: "row" },
-            _vm._l(_vm.products, function(product, index) {
-              return _c(
-                "div",
-                { key: index, staticClass: "col-md-4 product-box" },
-                [
-                  _c(
-                    "router-link",
-                    { attrs: { to: { path: "/products/" + product.id } } },
-                    [
-                      _c("img", {
-                        attrs: { src: product.image, alt: product.name }
-                      }),
-                      _vm._v(" "),
-                      _c("h5", [
-                        _c("span", {
-                          domProps: { innerHTML: _vm._s(product.name) }
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "span",
-                          { staticClass: "small-text text-muted float-right" },
-                          [_vm._v("$ " + _vm._s(product.price))]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "col-md-4 btn btn-sm btn-primary float-right"
-                        },
-                        [_vm._v("Buy Now")]
-                      )
-                    ]
-                  )
-                ],
-                1
-              )
-            }),
-            0
-          )
-        ])
-      ])
-    ])
+    _c(
+      "div",
+      { staticClass: "flex flex-wrap-reverse" },
+      _vm._l(_vm.products, function(product) {
+        return _c(
+          "div",
+          { key: product.id, staticClass: "w-1/6 p-2" },
+          [
+            _c(
+              "router-link",
+              { attrs: { to: { path: "/products/" + product.id } } },
+              [
+                _c("img", {
+                  staticClass:
+                    "w-auto h-auto m-auto md:m-2 shadow-2xl hover:shadow-5xl",
+                  attrs: { src: product.image, alt: product.name }
+                }),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-sm text-gray-900 text-center" }, [
+                  _vm._v(_vm._s(product.name))
+                ])
+              ]
+            )
+          ],
+          1
+        )
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = [
@@ -5426,9 +5398,19 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "items-center" }, [
-      _c("p", { staticClass: "text-blue-500 text-bold text-xl" }, [
-        _vm._v("Welcome to the store!")
+    return _c("div", { staticClass: "text-right" }, [
+      _c(
+        "p",
+        { staticClass: "text-5xl text-blue-500 text-right font-bold m-2" },
+        [_vm._v("Pay as you like")]
+      ),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-xl text-right text-blue-400 m-2" }, [
+        _vm._v("and take as many as you need.")
+      ]),
+      _vm._v(" "),
+      _c("p", { staticClass: "text-xl text-right text-gray-700 m-2" }, [
+        _vm._v("Let's recycle and reuse!")
       ])
     ])
   }
