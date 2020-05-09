@@ -1,35 +1,40 @@
 <template>
-    <div>
-        <table class="table table-responsive table-striped">
+    <div class="px-10">
+        <button @click="newProduct" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+            Add a new product
+        </button>
+        <table class="table-fixed my-4">
             <thead>
                 <tr>
-                    <td></td>
-                    <td>Product</td>
-                    <td>Units</td>
-                    <td>Price</td>
-                    <td>Description</td>
+                <th class="w-2/6 border px-4 py-2">Name</th>
+                <th class="w-1/6 border px-4 py-2">ISBN</th>
+                <th class="w-1/6 border px-4 py-2">Status</th>
+                <th class="w-1/6 border px-4 py-2">Original Price</th>
+                <th class="w-1/6 border px-4 py-2">Sale Price</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(product,index) in products" @key="index" @dblclick="editingItem = product">
-                    <td>{{index+1}}</td>
-                    <td v-html="product.name"></td>
-                    <td v-model="product.units">{{product.units}}</td>
-                    <td v-model="product.price">{{product.price}}</td>
-                    <td v-model="product.price">{{product.description}}</td>
+                <tr v-for="product in products" v-bind:key="product.id">
+                <td class="border px-4 py-2">{{product.name}}</td>
+                <td class="border px-4 py-2">{{product.isbn}}</td>
+                <td class="border px-4 py-2 text-right">
+                    <span v-if="product.check_out_status == 0">In Stock</span>
+                    <span v-else>Sold Out</span>
+                </td>
+                <td class="border px-4 py-2 text-right">{{product.price}}</td>
+                <td class="border px-4 py-2 text-right"></td>
                 </tr>
             </tbody>
         </table>
         <modal @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
         <modal @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
         <br>
-        <button class="btn btn-primary" @click="newProduct">Add New Product</button>
     </div>
 </template>
 
 <script>
 import Modal from './ProductModal'
-
+import axios from 'axios';
 export default {
     data() {
         return {

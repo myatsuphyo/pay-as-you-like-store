@@ -1,14 +1,15 @@
 <template>
-    <div class="row">
-        <div class="font-bold">
+    <div class="px-10">
+        <p class="font-bold text-xl py-6">Total Store Information</p>
+        <p class="font-bold hover:text-blue-500 py-2">
             <a href='/admin/orders'>Orders ({{orders.length}})</a>
-        </div>
-        <div class="font-bold">
+        </p>
+        <p class="font-bold hover:text-blue-500 py-2">
             <a href='/admin/products'>Products ({{products.length}})</a>
-        </div>
-        <div class="font-bold">
+        </p>
+        <p class="font-bold hover:text-blue-500 py-2">
             <a href='/admin/users'>Users ({{users.length}})</a>
-        </div>
+        </p>
     </div>
 </template>
 
