@@ -19,9 +19,10 @@ Route::post('register', 'UserController@register');
 Route::get('/products', 'ProductController@index');
 Route::post('/upload-file', 'ProductController@uploadFile');
 Route::get('/products/{product}', 'ProductController@show');
+Route::get('/users', 'UserController@index');
 
 Route::group(['middleware' => 'auth:api'], function () {
-    Route::get('/users', 'UserController@index');
+    // Route::get('/users', 'UserController@index');
     Route::get('users/{user}', 'UserController@show');
     Route::patch('users/{user}', 'UserController@update');
     Route::get('users/{user}/orders', 'UserController@showOrders');
