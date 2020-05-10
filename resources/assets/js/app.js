@@ -3,6 +3,10 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+// axios
+import axios from 'axios';
+window.axios = axios;
+
 import App from './views/App'
 import Home from './views/Home'
 import Login from './views/Login'

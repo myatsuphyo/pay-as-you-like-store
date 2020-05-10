@@ -1908,8 +1908,6 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1924,7 +1922,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -1937,13 +1935,13 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/users/').then(function (response) {
+    axios.get('/api/users/').then(function (response) {
       return _this.users = response.data;
     });
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/products/').then(function (response) {
+    axios.get('/api/products/').then(function (response) {
       return _this.products = response.data;
     });
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/orders/').then(function (response) {
+    axios.get('/api/orders/').then(function (response) {
       return _this.orders = response.data;
     });
   }
@@ -2656,8 +2654,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2676,7 +2672,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2686,7 +2681,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("api/products/").then(function (response) {
+    axios.get("api/products/").then(function (response) {
       return _this.products = response.data;
     });
   }
@@ -4298,20 +4293,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [
-    _c("div", { staticClass: "font-bold" }, [
+  return _c("div", { staticClass: "px-10" }, [
+    _c("p", { staticClass: "font-bold text-lg py-5" }, [
+      _vm._v("Total Store Information")
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "font-bold hover:text-blue-500 my-2" }, [
       _c("a", { attrs: { href: "/admin/orders" } }, [
         _vm._v("Orders (" + _vm._s(_vm.orders.length) + ")")
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "font-bold" }, [
+    _c("div", { staticClass: "font-bold hover:text-blue-500 my-2" }, [
       _c("a", { attrs: { href: "/admin/products" } }, [
         _vm._v("Products (" + _vm._s(_vm.products.length) + ")")
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "font-bold" }, [
+    _c("div", { staticClass: "font-bold hover:text-blue-500 my-2" }, [
       _c("a", { attrs: { href: "/admin/users" } }, [
         _vm._v("Users (" + _vm._s(_vm.users.length) + ")")
       ])
@@ -20904,18 +20903,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./views/App */ "./resources/assets/js/views/App.vue");
-/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/Home */ "./resources/assets/js/views/Home.vue");
-/* harmony import */ var _views_Login__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Login */ "./resources/assets/js/views/Login.vue");
-/* harmony import */ var _views_Register__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Register */ "./resources/assets/js/views/Register.vue");
-/* harmony import */ var _views_SingleProduct__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/SingleProduct */ "./resources/assets/js/views/SingleProduct.vue");
-/* harmony import */ var _views_Checkout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/Checkout */ "./resources/assets/js/views/Checkout.vue");
-/* harmony import */ var _views_Confirmation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/Confirmation */ "./resources/assets/js/views/Confirmation.vue");
-/* harmony import */ var _views_UserBoard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/UserBoard */ "./resources/assets/js/views/UserBoard.vue");
-/* harmony import */ var _views_Admin__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/Admin */ "./resources/assets/js/views/Admin.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _views_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/App */ "./resources/assets/js/views/App.vue");
+/* harmony import */ var _views_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/Home */ "./resources/assets/js/views/Home.vue");
+/* harmony import */ var _views_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/Login */ "./resources/assets/js/views/Login.vue");
+/* harmony import */ var _views_Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/Register */ "./resources/assets/js/views/Register.vue");
+/* harmony import */ var _views_SingleProduct__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/SingleProduct */ "./resources/assets/js/views/SingleProduct.vue");
+/* harmony import */ var _views_Checkout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/Checkout */ "./resources/assets/js/views/Checkout.vue");
+/* harmony import */ var _views_Confirmation__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/Confirmation */ "./resources/assets/js/views/Confirmation.vue");
+/* harmony import */ var _views_UserBoard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/UserBoard */ "./resources/assets/js/views/UserBoard.vue");
+/* harmony import */ var _views_Admin__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./views/Admin */ "./resources/assets/js/views/Admin.vue");
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]); // axios
+
+
+window.axios = axios__WEBPACK_IMPORTED_MODULE_2___default.a;
 
 
 
@@ -20930,27 +20934,27 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: [{
     path: '/',
     name: 'home',
-    component: _views_Home__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _views_Home__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
     path: '/login',
     name: 'login',
-    component: _views_Login__WEBPACK_IMPORTED_MODULE_4__["default"]
+    component: _views_Login__WEBPACK_IMPORTED_MODULE_5__["default"]
   }, {
     path: '/register',
     name: 'register',
-    component: _views_Register__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _views_Register__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: '/products/:id',
     name: 'single-products',
-    component: _views_SingleProduct__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _views_SingleProduct__WEBPACK_IMPORTED_MODULE_7__["default"]
   }, {
     path: '/confirmation',
     name: 'confirmation',
-    component: _views_Confirmation__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _views_Confirmation__WEBPACK_IMPORTED_MODULE_9__["default"]
   }, {
     path: '/checkout',
     name: 'checkout',
-    component: _views_Checkout__WEBPACK_IMPORTED_MODULE_7__["default"],
+    component: _views_Checkout__WEBPACK_IMPORTED_MODULE_8__["default"],
     props: function props(route) {
       return {
         pid: route.query.pid
@@ -20959,7 +20963,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: '/dashboard',
     name: 'userboard',
-    component: _views_UserBoard__WEBPACK_IMPORTED_MODULE_9__["default"],
+    component: _views_UserBoard__WEBPACK_IMPORTED_MODULE_10__["default"],
     meta: {
       requiresAuth: true,
       is_user: true
@@ -20967,7 +20971,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: '/admin/:page',
     name: 'admin-pages',
-    component: _views_Admin__WEBPACK_IMPORTED_MODULE_10__["default"],
+    component: _views_Admin__WEBPACK_IMPORTED_MODULE_11__["default"],
     meta: {
       requiresAuth: true,
       is_admin: true
@@ -20975,7 +20979,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: '/admin',
     name: 'admin',
-    component: _views_Admin__WEBPACK_IMPORTED_MODULE_10__["default"],
+    component: _views_Admin__WEBPACK_IMPORTED_MODULE_11__["default"],
     meta: {
       requiresAuth: true,
       is_admin: true
@@ -21027,7 +21031,7 @@ router.beforeEach(function (to, from, next) {
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
-    App: _views_App__WEBPACK_IMPORTED_MODULE_2__["default"]
+    App: _views_App__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   router: router
 });

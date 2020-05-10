@@ -1,19 +1,19 @@
 <template>
-    <div class="row">
-        <div class="font-bold">
+    <div class="px-10">
+        <p class="font-bold text-lg py-5">Total Store Information</p>
+        <div class="font-bold hover:text-blue-500 my-2">
             <a href='/admin/orders'>Orders ({{orders.length}})</a>
         </div>
-        <div class="font-bold">
+        <div class="font-bold hover:text-blue-500 my-2">
             <a href='/admin/products'>Products ({{products.length}})</a>
         </div>
-        <div class="font-bold">
+        <div class="font-bold hover:text-blue-500 my-2">
             <a href='/admin/users'>Users ({{users.length}})</a>
         </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
     data() {
         return {
