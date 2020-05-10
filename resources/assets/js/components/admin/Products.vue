@@ -1,25 +1,32 @@
 <template>
     <div>
-        <table class="table table-responsive table-striped">
+        <p class="font-bold text-lg py-5">Products Information</p>
+        <table class="table-fixed">
             <thead>
                 <tr>
-                    <td></td>
-                    <td>Product</td>
-                    <td>Units</td>
-                    <td>Price</td>
-                    <td>Description</td>
+                <th class="border w-1/12 px-4 py-2">ID</th>
+                <th class="border w-4/12 px-4 py-2">Name</th>
+                <th class="border w-1/12 px-4 py-2">Status</th>
+                <th class="border w-2/12 px-4 py-2">ISBN</th>
+                <th class="border w-2/12 px-4 py-2">Author</th>
+                <th class="border w-1/12 px-4 py-2">Original Price</th>
+                <th class="border w-1/12 px-4 py-2">Sale Price</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(product,index) in products" @key="index" @dblclick="editingItem = product">
-                    <td>{{index+1}}</td>
-                    <td v-html="product.name"></td>
-                    <td v-model="product.units">{{product.units}}</td>
-                    <td v-model="product.price">{{product.price}}</td>
-                    <td v-model="product.price">{{product.description}}</td>
+                <tr v-for="product in products" v-bind:key="product.id">
+                <td class="border px-4 py-2 text-center">{{product.id}}</td>
+                <td class="border px-4 py-2">{{product.name}}</td>
+                <td class="border px-4 py-2 text-center">{{product.check_out_status}}</td>
+                <td class="border px-4 py-2 text-center">{{product.isbn}}</td>
+                <td class="border px-4 py-2 text-right">{{product.author}}</td>
+                <td class="border px-4 py-2 text-right">{{product.price}}</td>
+                <td class="border px-4 py-2"></td>
                 </tr>
             </tbody>
         </table>
+
+
         <modal @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
         <modal @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
         <br>

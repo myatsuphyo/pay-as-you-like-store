@@ -1,18 +1,14 @@
 <template>
-    <div>
-        <div class="container">
-            <!-- <div class="col-md-3">
-                <ul style="list-style-type:none">
-                    <li class="active"><button class="btn" @click="setComponent('main')">Dashboard</button></li>
-                    <li><button class="btn" @click="setComponent('orders')">Orders</button></li>
-                    <li><button class="btn" @click="setComponent('products')">Products</button></li>
-                    <li><button class="btn" @click="setComponent('users')">Users</button></li>
-                </ul>
-            </div> -->
-            <div class="col-md-9">
-                <component :is="activeComponent"></component>
-            </div>
-        </div>
+    <div class="px-10">
+        <!-- <div class="col-md-3">
+            <ul style="list-style-type:none">
+                <li class="active"><button class="btn" @click="setComponent('main')">Dashboard</button></li>
+                <li><button class="btn" @click="setComponent('orders')">Orders</button></li>
+                <li><button class="btn" @click="setComponent('products')">Products</button></li>
+                <li><button class="btn" @click="setComponent('users')">Users</button></li>
+            </ul>
+        </div> -->
+        <component :is="activeComponent"></component>
     </div>
 </template>
 
