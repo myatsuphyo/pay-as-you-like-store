@@ -38,6 +38,8 @@ class ProductController extends Controller
         $product = Product::create([
             'name' => $request->name,
             'description' => $request->description,
+            'isbn' => $request->isbn,
+            'author' => $request->author,
             'units' => $request->units,
             'price' => $request->price,
             'image' => $request->image
@@ -108,14 +110,15 @@ class ProductController extends Controller
         ]);
     }
 
-    public function uploadFile(Request $request)
-    {
-        if ($request->hasFile('image')) {
-            $name = time() . "_" . $request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images'), $name);
-        }
-        return response()->json(asset("images/$name"), 201);
-    }
+    // Currently not using
+    // public function uploadFile(Request $request)
+    // {
+    //     if ($request->hasFile('image')) {
+    //         $name = time() . "_" . $request->file('image')->getClientOriginalName();
+    //         $request->file('image')->move(public_path('images'), $name);
+    //     }
+    //     return response()->json(asset("images/$name"), 201);
+    // }
 
     public function updateUnits(Request $request, Product $product)
     {

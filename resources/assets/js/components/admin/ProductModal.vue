@@ -2,25 +2,64 @@
     <div class="modal-mask">
         <div class="modal-wrapper">
             <div class="modal-container">
-                <div class="modal-header">
-                    <slot name="header" v-html="data.name"></slot>
+                <div class="modal-header text-lg font-bold">
+                    <span v-if="data.name == null">Add a new proudct</span>
+                    <span v-else>Edit a new proudct</span>
                 </div>
                 <div class="modal-body">
                     <slot name="body">
-                        Name: <input type="text" v-model="data.name">
-                        Units: <input type="text" v-model="data.units">
-                        Price: <input type="text" v-model="data.price">
-                        <textarea v-model="data.description" placeholder="description"></textarea>
-                        <span >
-                            <img :src="data.image" v-show="data.image != null">
-                            <input type="file" id="file" @change="attachFile">
-                        </span>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                Name
+                            </label>
+                            <input v-model="data.name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                A brief description
+                            </label>
+                            <input v-model="data.description" class="shadow appearance-none border rounded w-full h-auto overflow-y-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                Image URL
+                            </label>
+                            <input v-model="data.image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                        </div>
+                        <div class="mb-4 flex">
+                            <div class="w-1/2 mr-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    Author
+                                </label>
+                                <input v-model="data.author" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                            </div>
+                            <div class="w-1/2 ml-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    ISBN
+                                </label>
+                                <input v-model="data.isbn" class="text-left shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                            </div>
+                        </div>
+                        <div class="mb-4 flex">
+                            <div class="w-1/2 mr-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    Price
+                                </label>
+                                <input v-model="data.price" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                            </div>
+                            <div class="w-1/2 ml-1">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    Units
+                                </label>
+                                <input v-model="data.units" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  type="text">
+                            </div>
+                        </div>
                     </slot>
                 </div>
                 <div class="modal-footer">
                     <slot name="footer">
-                        <button class="modal-default-button" @click="uploadFile">
-                            Finish
+                        <button @click="submit" class="bg-blue-500 shadow-outline text-gray-100 float-right font-semibold hover:shadow-lg hover:bg-blue-400 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full">
+                            +
                         </button>
                     </slot>
                 </div>
@@ -44,29 +83,22 @@ export default {
             }
             return {
                 name: "",
-                units: "",
-                price: "",
                 description: "",
-                image: false
+                image:"",
+                author: "",
+                isbn: "",
+                price: "",
+                unit: "", 
             }
         }
     },
     methods: {
-        attachFile(event) {
-            this.attachment = event.target.files[0];
-        },
-        uploadFile(event) {
-            if (this.attachment != null) {
-                var formData = new FormData();
-                formData.append("image", this.attachment)
-                let headers = {'Content-Type': 'multipart/form-data'}
-                axios.post("/api/upload-file", formData, {headers}).then(response => {
-                    this.product.image = response.data
-                    this.$emit('close', this.product)
-                })
-            } else {
+        submit(event) {
+            axios.post("/api/add/product", this.data).then(response => {
+                this.product.image = response.data
                 this.$emit('close', this.product)
-            }
+            })
+            // console.log(this.data)
         }
     }
 }

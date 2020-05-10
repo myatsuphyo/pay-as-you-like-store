@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
 Route::get('/products', 'ProductController@index');
-Route::post('/upload-file', 'ProductController@uploadFile');
+// Route::post('/upload-file', 'ProductController@uploadFile');
+Route::post('/add/product', 'ProductController@store');
 Route::get('/products/{product}', 'ProductController@show');
 Route::get('/users', 'UserController@index');
 

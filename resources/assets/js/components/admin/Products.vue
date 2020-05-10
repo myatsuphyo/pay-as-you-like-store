@@ -1,7 +1,12 @@
 <template>
     <div>
-        <p class="font-bold text-lg py-5">Products Information</p>
-        <table class="table-fixed">
+        <p class="font-bold text-lg py-5">
+            Products Information
+            <button @click="newProduct" class="bg-transparent float-right hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
+                Add a new product
+            </button>
+        </p>
+        <table class="table-fixed my-2 bg-white shadow-sm">
             <thead>
                 <tr>
                 <th class="border w-1/12 px-4 py-2">ID</th>
@@ -26,11 +31,10 @@
             </tbody>
         </table>
 
-
         <modal @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
         <modal @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
         <br>
-        <button class="btn btn-primary" @click="newProduct">Add New Product</button>
+        <!-- <button class="btn btn-primary" @click="newProduct">Add New Product</button> -->
     </div>
 </template>
 

@@ -2056,6 +2056,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['product'],
   data: function data() {
@@ -2071,36 +2110,24 @@ __webpack_require__.r(__webpack_exports__);
 
       return {
         name: "",
-        units: "",
-        price: "",
         description: "",
-        image: false
+        image: "",
+        author: "",
+        isbn: "",
+        price: "",
+        unit: ""
       };
     }
   },
   methods: {
-    attachFile: function attachFile(event) {
-      this.attachment = event.target.files[0];
-    },
-    uploadFile: function uploadFile(event) {
+    submit: function submit(event) {
       var _this = this;
 
-      if (this.attachment != null) {
-        var formData = new FormData();
-        formData.append("image", this.attachment);
-        var headers = {
-          'Content-Type': 'multipart/form-data'
-        };
-        axios.post("/api/upload-file", formData, {
-          headers: headers
-        }).then(function (response) {
-          _this.product.image = response.data;
+      axios.post("/api/add/product", this.data).then(function (response) {
+        _this.product.image = response.data;
 
-          _this.$emit('close', _this.product);
-        });
-      } else {
-        this.$emit('close', this.product);
-      }
+        _this.$emit('close', _this.product);
+      }); // console.log(this.data)
     }
   }
 });
@@ -2117,6 +2144,10 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ProductModal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProductModal */ "./resources/assets/js/components/admin/ProductModal.vue");
+//
+//
+//
+//
 //
 //
 //
@@ -4335,115 +4366,285 @@ var render = function() {
   return _c("div", { staticClass: "modal-mask" }, [
     _c("div", { staticClass: "modal-wrapper" }, [
       _c("div", { staticClass: "modal-container" }, [
-        _c("div", { staticClass: "modal-header" }, [_vm._t("header")], 2),
+        _c("div", { staticClass: "modal-header text-lg font-bold" }, [
+          _vm.data.name == null
+            ? _c("span", [_vm._v("Add a new proudct")])
+            : _c("span", [_vm._v("Edit a new proudct")])
+        ]),
         _vm._v(" "),
         _c(
           "div",
           { staticClass: "modal-body" },
           [
             _vm._t("body", [
-              _vm._v("\n                    Name: "),
-              _c("input", {
-                directives: [
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
                   {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.name,
-                    expression: "data.name"
-                  }
-                ],
-                attrs: { type: "text" },
-                domProps: { value: _vm.data.name },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "name", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v("\n                    Units: "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.units,
-                    expression: "data.units"
-                  }
-                ],
-                attrs: { type: "text" },
-                domProps: { value: _vm.data.units },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "units", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v("\n                    Price: "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.price,
-                    expression: "data.price"
-                  }
-                ],
-                attrs: { type: "text" },
-                domProps: { value: _vm.data.price },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "price", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.data.description,
-                    expression: "data.description"
-                  }
-                ],
-                attrs: { placeholder: "description" },
-                domProps: { value: _vm.data.description },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.$set(_vm.data, "description", $event.target.value)
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("span", [
-                _c("img", {
-                  directives: [
-                    {
-                      name: "show",
-                      rawName: "v-show",
-                      value: _vm.data.image != null,
-                      expression: "data.image != null"
-                    }
-                  ],
-                  attrs: { src: _vm.data.image }
-                }),
+                    staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                    attrs: { for: "username" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Name\n                        "
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c("input", {
-                  attrs: { type: "file", id: "file" },
-                  on: { change: _vm.attachFile }
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.data.name,
+                      expression: "data.name"
+                    }
+                  ],
+                  staticClass:
+                    "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.data.name },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.data, "name", $event.target.value)
+                    }
+                  }
                 })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                    attrs: { for: "username" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            A brief description\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.data.description,
+                      expression: "data.description"
+                    }
+                  ],
+                  staticClass:
+                    "shadow appearance-none border rounded w-full h-auto overflow-y-auto py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.data.description },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.data, "description", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                    attrs: { for: "username" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                            Image URL\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.data.image,
+                      expression: "data.image"
+                    }
+                  ],
+                  staticClass:
+                    "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                  attrs: { type: "text" },
+                  domProps: { value: _vm.data.image },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.data, "image", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4 flex" }, [
+                _c("div", { staticClass: "w-1/2 mr-1" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                      attrs: { for: "username" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                Author\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.data.author,
+                        expression: "data.author"
+                      }
+                    ],
+                    staticClass:
+                      "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.data.author },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.data, "author", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-1/2 ml-1" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                      attrs: { for: "username" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                ISBN\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.data.isbn,
+                        expression: "data.isbn"
+                      }
+                    ],
+                    staticClass:
+                      "text-left shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.data.isbn },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.data, "isbn", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4 flex" }, [
+                _c("div", { staticClass: "w-1/2 mr-1" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                      attrs: { for: "username" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                Price\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.data.price,
+                        expression: "data.price"
+                      }
+                    ],
+                    staticClass:
+                      "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.data.price },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.data, "price", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "w-1/2 ml-1" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "block text-gray-700 text-sm font-bold mb-2",
+                      attrs: { for: "username" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                                Units\n                            "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.data.units,
+                        expression: "data.units"
+                      }
+                    ],
+                    staticClass:
+                      "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.data.units },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.data, "units", $event.target.value)
+                      }
+                    }
+                  })
+                ])
               ])
             ])
           ],
@@ -4458,14 +4659,11 @@ var render = function() {
               _c(
                 "button",
                 {
-                  staticClass: "modal-default-button",
-                  on: { click: _vm.uploadFile }
+                  staticClass:
+                    "bg-blue-500 shadow-outline text-gray-100 float-right font-semibold hover:shadow-lg hover:bg-blue-400 hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded-full",
+                  on: { click: _vm.submit }
                 },
-                [
-                  _vm._v(
-                    "\n                        Finish\n                    "
-                  )
-                ]
+                [_vm._v("\n                        +\n                    ")]
               )
             ])
           ],
@@ -4501,10 +4699,19 @@ var render = function() {
     "div",
     [
       _c("p", { staticClass: "font-bold text-lg py-5" }, [
-        _vm._v("Products Information")
+        _vm._v("\n        Products Information\n        "),
+        _c(
+          "button",
+          {
+            staticClass:
+              "bg-transparent float-right hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded",
+            on: { click: _vm.newProduct }
+          },
+          [_vm._v("\n            Add a new product\n        ")]
+        )
       ]),
       _vm._v(" "),
-      _c("table", { staticClass: "table-fixed" }, [
+      _c("table", { staticClass: "table-fixed my-2 bg-white shadow-sm" }, [
         _vm._m(0),
         _vm._v(" "),
         _c(
@@ -4568,13 +4775,7 @@ var render = function() {
         on: { close: _vm.addProduct }
       }),
       _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary", on: { click: _vm.newProduct } },
-        [_vm._v("Add New Product")]
-      )
+      _c("br")
     ],
     1
   )
