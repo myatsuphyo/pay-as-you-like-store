@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="flex-wrap pt-8">
-                <div v-if="product.lines !== []" class="text-gray-700 text-xl">
+                <div v-show="product.lines.length != 0" class="text-gray-700 text-xl">
                     My favourite lines
                 </div>
                 <p v-for="line in product.lines" v-bind:key="line.id" class="text-gray-700 text-base py-2">

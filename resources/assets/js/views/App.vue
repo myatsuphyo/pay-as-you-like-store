@@ -8,7 +8,9 @@
             </div>
             <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div class="text-sm hidden  md:block lg:flex-grow">
-                    <span v-if="user_type == 1" class="font-bold uppercase text-gray-100">Admin Dashboard</span>
+                    <router-link :to="{ name: 'admin' }" class="nav-link" v-if="user_type == 1">
+                        <span v-if="user_type == 1" class="font-bold uppercase text-gray-100">Admin Dashboard</span>
+                    </router-link>
                     <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-blue-200 hover:text-white mr-4 float-right">
                         <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link>
                     </a>
@@ -21,7 +23,7 @@
                 </div>
             </div>
         </nav>
-        <main class="py-4">
+        <main>
             <router-view @loggedIn="change"></router-view>
         </main>
         <!-- <router-link :to="{ name: 'login' }" class="nav-link" v-if="!isLoggedIn">Login</router-link> -->

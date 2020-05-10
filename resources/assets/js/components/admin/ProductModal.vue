@@ -4,7 +4,7 @@
             <div class="modal-container">
                 <div class="modal-header text-lg font-bold">
                     <span v-if="data.name == null">Add a new proudct</span>
-                    <span v-else>Edit a new proudct</span>
+                    <span v-else>Edit a new proudct</span> {{data.success}}
                 </div>
                 <div class="modal-body">
                     <slot name="body">
@@ -73,7 +73,7 @@ export default {
     props: ['product'],
     data() {
         return {
-            attachment: null
+            success: true
         }
     },
     computed: {

@@ -2099,7 +2099,7 @@ __webpack_require__.r(__webpack_exports__);
   props: ['product'],
   data: function data() {
     return {
-      attachment: null
+      success: true
     };
   },
   computed: {
@@ -2184,13 +2184,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       products: [],
       editingItem: null,
-      addingProduct: null
+      addingProduct: null,
+      success: false,
+      close: true
     };
   },
   components: {
@@ -2212,44 +2215,32 @@ __webpack_require__.r(__webpack_exports__);
         image: null,
         description: null
       };
+      this.close = false;
     },
-    endEditing: function endEditing(product) {
-      var _this2 = this;
+    showSuccessMessage: function showSuccessMessage() {
+      this.success = true;
+      this.close = true;
+    } // endEditing(product) {
+    //     this.editingItem = null
+    //     let index = this.products.indexOf(product)
+    //     let name = product.name
+    //     let units = product.units
+    //     let price = product.price
+    //     let description = product.description
+    //     axios.put(`/api/products/${product.id}`, {name, units, price, description})
+    //             .then(response => this.products[index] = product)
+    // },
+    // addProduct(product) {
+    //     this.addingProduct = null
+    //     let name = product.name
+    //     let units = product.units
+    //     let price = product.price
+    //     let description = product.description
+    //     let image = product.image 
+    //     axios.post("/api/products/", {name, units, price, description, image})
+    //             .then(response => this.products.push(product))
+    // }
 
-      this.editingItem = null;
-      var index = this.products.indexOf(product);
-      var name = product.name;
-      var units = product.units;
-      var price = product.price;
-      var description = product.description;
-      axios.put("/api/products/".concat(product.id), {
-        name: name,
-        units: units,
-        price: price,
-        description: description
-      }).then(function (response) {
-        return _this2.products[index] = product;
-      });
-    },
-    addProduct: function addProduct(product) {
-      var _this3 = this;
-
-      this.addingProduct = null;
-      var name = product.name;
-      var units = product.units;
-      var price = product.price;
-      var description = product.description;
-      var image = product.image;
-      axios.post("/api/products/", {
-        name: name,
-        units: units,
-        price: price,
-        description: description,
-        image: image
-      }).then(function (response) {
-        return _this3.products.push(product);
-      });
-    }
   }
 });
 
@@ -2264,7 +2255,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -2416,6 +2406,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
 //
 //
 //
@@ -4369,7 +4361,8 @@ var render = function() {
         _c("div", { staticClass: "modal-header text-lg font-bold" }, [
           _vm.data.name == null
             ? _c("span", [_vm._v("Add a new proudct")])
-            : _c("span", [_vm._v("Edit a new proudct")])
+            : _c("span", [_vm._v("Edit a new proudct")]),
+          _vm._v(" " + _vm._s(_vm.data.success) + "\n            ")
         ]),
         _vm._v(" "),
         _c(
@@ -4700,6 +4693,12 @@ var render = function() {
     [
       _c("p", { staticClass: "font-bold text-lg py-5" }, [
         _vm._v("\n        Products Information\n        "),
+        _vm.success
+          ? _c("span", { staticClass: "text-green-500 mx-2" }, [
+              _vm._v("The process was successful.")
+            ])
+          : _vm._e(),
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -4754,12 +4753,12 @@ var render = function() {
           {
             name: "show",
             rawName: "v-show",
-            value: _vm.editingItem != null,
-            expression: "editingItem != null"
+            value: _vm.close != true,
+            expression: "close!=true"
           }
         ],
         attrs: { product: _vm.editingItem },
-        on: { close: _vm.endEditing }
+        on: { close: _vm.showSuccessMessage }
       }),
       _vm._v(" "),
       _c("modal", {
@@ -4767,12 +4766,12 @@ var render = function() {
           {
             name: "show",
             rawName: "v-show",
-            value: _vm.addingProduct != null,
-            expression: "addingProduct != null"
+            value: _vm.close != true,
+            expression: "close!=true"
           }
         ],
         attrs: { product: _vm.addingProduct },
-        on: { close: _vm.addProduct }
+        on: { close: _vm.showSuccessMessage }
       }),
       _vm._v(" "),
       _c("br")
@@ -4834,22 +4833,28 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("table", { staticClass: "table table-responsive table-striped" }, [
+    _c("p", { staticClass: "font-bold text-lg py-5" }, [
+      _vm._v("\n        Users Information\n    ")
+    ]),
+    _vm._v(" "),
+    _c("table", { staticClass: "table-fixed" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.users, function(user, index) {
-          return _c("tr", { on: { key: index } }, [
-            _c("td", [_vm._v(_vm._s(index + 1))]),
+        _vm._l(_vm.users, function(user) {
+          return _c("tr", { key: user.id }, [
+            _c("td", { staticClass: "border px-4 py-2" }, [
+              _vm._v(_vm._s(user.id))
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.name))]),
+            _c("td", { staticClass: "border px-4 py-2" }, [
+              _vm._v(_vm._s(user.name))
+            ]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.email))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.created_at))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(user.orders.length))])
+            _c("td", { staticClass: "border px-4 py-2" }, [
+              _vm._v(_vm._s(user.email))
+            ])
           ])
         }),
         0
@@ -4864,15 +4869,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("td"),
+        _c("th", { staticClass: "border w-1/3 px-4 py-2" }, [_vm._v("ID")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Name")]),
+        _c("th", { staticClass: "border w-1/3 px-4 py-2" }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("td", [_vm._v("Email")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Joined")]),
-        _vm._v(" "),
-        _c("td", [_vm._v("Total Orders")])
+        _c("th", { staticClass: "border w-1/3 px-4 py-2" }, [_vm._v("Email")])
       ])
     ])
   }
@@ -4950,9 +4951,22 @@ var render = function() {
               [
                 _vm.user_type == 1
                   ? _c(
-                      "span",
-                      { staticClass: "font-bold uppercase text-gray-100" },
-                      [_vm._v("Admin Dashboard")]
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: { name: "admin" } }
+                      },
+                      [
+                        _vm.user_type == 1
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "font-bold uppercase text-gray-100"
+                              },
+                              [_vm._v("Admin Dashboard")]
+                            )
+                          : _vm._e()
+                      ]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -5020,19 +5034,15 @@ var render = function() {
                       : _vm._e()
                   ]
                 )
-              ]
+              ],
+              1
             )
           ]
         )
       ]
     ),
     _vm._v(" "),
-    _c(
-      "main",
-      { staticClass: "py-4" },
-      [_c("router-view", { on: { loggedIn: _vm.change } })],
-      1
-    )
+    _c("main", [_c("router-view", { on: { loggedIn: _vm.change } })], 1)
   ])
 }
 var staticRenderFns = [
@@ -5304,11 +5314,11 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "flex flex-wrap-reverse" },
+      { staticClass: "flex-wrap flex" },
       _vm._l(_vm.products, function(product) {
         return _c(
           "div",
-          { key: product.id, staticClass: "w-1/6 p-2" },
+          { key: product.id, staticClass: "w-1/6 p-2 mb-10" },
           [
             _c(
               "router-link",
@@ -5316,7 +5326,7 @@ var render = function() {
               [
                 _c("img", {
                   staticClass:
-                    "w-auto h-auto m-auto md:m-2 shadow-2xl hover:shadow-5xl",
+                    "w-full h-full p-4 rounded m-auto md:m-2 shadow-2xl hover:shadow-5xl",
                   attrs: { src: product.image, alt: product.name }
                 }),
                 _vm._v(" "),
@@ -5341,15 +5351,15 @@ var staticRenderFns = [
     return _c("div", { staticClass: "text-right" }, [
       _c(
         "p",
-        { staticClass: "text-5xl text-blue-500 text-right font-bold m-2" },
+        { staticClass: "text-5xl text-blue-500 text-right font-bold m-1" },
         [_vm._v("Pay as you like")]
       ),
       _vm._v(" "),
-      _c("p", { staticClass: "text-xl text-right text-blue-400 m-2" }, [
+      _c("p", { staticClass: "text-xl text-right text-blue-400 m-1" }, [
         _vm._v("and take as many as you need.")
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "text-xl text-right text-gray-700 m-2" }, [
+      _c("p", { staticClass: "text-xl text-right text-gray-700 m-1" }, [
         _vm._v("Let's recycle and reuse!")
       ])
     ])
@@ -5784,11 +5794,21 @@ var render = function() {
         "div",
         { staticClass: "flex-wrap pt-8" },
         [
-          _vm.product.lines !== []
-            ? _c("div", { staticClass: "text-gray-700 text-xl" }, [
-                _vm._v("\n                My favourite lines\n            ")
-              ])
-            : _vm._e(),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.product.lines.length != 0,
+                  expression: "product.lines.length != 0"
+                }
+              ],
+              staticClass: "text-gray-700 text-xl"
+            },
+            [_vm._v("\n                My favourite lines\n            ")]
+          ),
           _vm._v(" "),
           _vm._l(_vm.product.lines, function(line) {
             return _c(

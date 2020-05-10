@@ -2,6 +2,7 @@
     <div>
         <p class="font-bold text-lg py-5">
             Products Information
+            <span v-if="success" class="text-green-500 mx-2">The process was successful.</span>
             <button @click="newProduct" class="bg-transparent float-right hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-1 px-4 border border-blue-500 hover:border-transparent rounded">
                 Add a new product
             </button>
@@ -31,8 +32,8 @@
             </tbody>
         </table>
 
-        <modal @close="endEditing" :product="editingItem" v-show="editingItem != null"></modal>
-        <modal @close="addProduct"  :product="addingProduct" v-show="addingProduct != null"></modal>
+        <modal @close="showSuccessMessage" :product="editingItem" v-show="close!=true"></modal>
+        <modal @close="showSuccessMessage"  :product="addingProduct" v-show="close!=true"></modal>
         <br>
         <!-- <button class="btn btn-primary" @click="newProduct">Add New Product</button> -->
     </div>
@@ -46,7 +47,9 @@ export default {
         return {
             products: [],
             editingItem: null,
-            addingProduct: null
+            addingProduct: null,
+            success: false, 
+            close: true
         }
     },
     components: {Modal},
@@ -62,31 +65,36 @@ export default {
                 image: null,
                 description: null,
             }
+            this.close = false
         },
-        endEditing(product) {
-            this.editingItem = null
-
-            let index = this.products.indexOf(product)
-            let name = product.name
-            let units = product.units
-            let price = product.price
-            let description = product.description
-
-            axios.put(`/api/products/${product.id}`, {name, units, price, description})
-                    .then(response => this.products[index] = product)
-        },
-        addProduct(product) {
-            this.addingProduct = null
-
-            let name = product.name
-            let units = product.units
-            let price = product.price
-            let description = product.description
-            let image = product.image 
-
-            axios.post("/api/products/", {name, units, price, description, image})
-                    .then(response => this.products.push(product))
+        showSuccessMessage() {
+            this.success = true
+            this.close = true
         }
+        // endEditing(product) {
+        //     this.editingItem = null
+
+        //     let index = this.products.indexOf(product)
+        //     let name = product.name
+        //     let units = product.units
+        //     let price = product.price
+        //     let description = product.description
+
+        //     axios.put(`/api/products/${product.id}`, {name, units, price, description})
+        //             .then(response => this.products[index] = product)
+        // },
+        // addProduct(product) {
+        //     this.addingProduct = null
+
+        //     let name = product.name
+        //     let units = product.units
+        //     let price = product.price
+        //     let description = product.description
+        //     let image = product.image 
+
+        //     axios.post("/api/products/", {name, units, price, description, image})
+        //             .then(response => this.products.push(product))
+        // }
     }
 }
 </script>

@@ -1,22 +1,21 @@
 <template>
     <div>
-        <table class="table table-responsive table-striped">
+        <p class="font-bold text-lg py-5">
+            Users Information
+        </p>
+        <table class="table-fixed">
             <thead>
                 <tr>
-                    <td></td>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Joined</td>
-                    <td>Total Orders</td>
+                <th class="border w-1/3 px-4 py-2">ID</th>
+                <th class="border w-1/3 px-4 py-2">Name</th>
+                <th class="border w-1/3 px-4 py-2">Email</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(user,index) in users" @key="index">
-                    <td>{{index+1}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
-                    <td>{{user.created_at}}</td>
-                    <td>{{user.orders.length}}</td>
+                <tr v-for="user in users" v-bind:key="user.id">
+                <td class="border px-4 py-2">{{user.id}}</td>
+                <td class="border px-4 py-2">{{user.name}}</td>
+                <td class="border px-4 py-2">{{user.email}}</td>
                 </tr>
             </tbody>
         </table>
